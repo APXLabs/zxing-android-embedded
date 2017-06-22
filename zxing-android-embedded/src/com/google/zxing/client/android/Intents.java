@@ -41,6 +41,10 @@ public final class Intents {
          * Setting this is effectively shorthand for setting explicit formats with {@link #FORMATS}.
          * It is overridden by that setting.
          */
+        public static final String HORZ = "HORZ_RES";
+
+        public static final String VERT = "VERT_RES";
+
         public static final String MODE = "SCAN_MODE";
 
         /**
