@@ -134,6 +134,20 @@ public class DecoratedBarcodeView extends FrameLayout {
 
         CameraSettings settings = new CameraSettings();
 
+        if (intent.hasExtra(Intents.Scan.HORZ)) {
+            int horizontalRes = intent.getIntExtra(Intents.Scan.HORZ, -1);
+            if (horizontalRes >= 0) {
+                settings.setDesiredHorizontalResolution(horizontalRes);
+            }
+        }
+
+        if (intent.hasExtra(Intents.Scan.VERT)) {
+            int verticalRes = intent.getIntExtra(Intents.Scan.VERT, -1);
+            if (verticalRes >= 0) {
+                settings.setDesiredVerticalResolution(verticalRes);
+            }
+        }
+
         if (intent.hasExtra(Intents.Scan.CAMERA_ID)) {
             int cameraId = intent.getIntExtra(Intents.Scan.CAMERA_ID, -1);
             if (cameraId >= 0) {

@@ -16,6 +16,25 @@ public class CameraSettings {
     private boolean autoTorchEnabled = false;
     private FocusMode focusMode = FocusMode.AUTO;
 
+    private int desiredHorizontalResolution = 0;
+    private int desiredVerticalResolution = 0;
+
+    public int getDesiredHorizontalResolution() {
+        return desiredHorizontalResolution;
+    }
+
+    public void setDesiredHorizontalResolution(int desiredHorizontalResolution) {
+        this.desiredHorizontalResolution = desiredHorizontalResolution;
+    }
+
+    public int getDesiredVerticalResolution() {
+        return desiredVerticalResolution;
+    }
+
+    public void setDesiredVerticalResolution(int desiredVerticalResolution) {
+        this.desiredVerticalResolution = desiredVerticalResolution;
+    }
+
     public enum FocusMode {
         AUTO,
         CONTINUOUS,

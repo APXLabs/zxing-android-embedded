@@ -289,10 +289,16 @@ public final class CameraManager {
         List<Size> previewSizes = getPreviewSizes(parameters);
         if (previewSizes.size() == 0) {
             requestedPreviewSize = null;
+
         } else {
             requestedPreviewSize = displayConfiguration.getBestPreviewSize(previewSizes, isCameraRotated());
 
-            parameters.setPreviewSize(requestedPreviewSize.width, requestedPreviewSize.height);
+            if ( settings.getDesiredHorizontalResolution() > 0 ) {
+                parameters.setPreviewSize(settings.getDesiredHorizontalResolution(), settings.getDesiredVerticalResolution());
+
+            } else {
+                parameters.setPreviewSize(requestedPreviewSize.width, requestedPreviewSize.height);
+            }
         }
 
         if (Build.DEVICE.equals("glass-1")) {
